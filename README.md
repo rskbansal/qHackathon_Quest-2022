@@ -7,9 +7,9 @@ We were given a task to make a simple Quantum Compile, which can apply basic Gat
 ## Pre-requisites
 - Python 3.6 or later
 - NumPy for Python  
-  `
+  ```
   pip install numpy
-  `
+  ```
 
 ## Features
 - Initialize 
