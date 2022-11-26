@@ -1,9 +1,12 @@
+# ---START---
 # Importing required libraries
 import numpy as np
+
 
 # Defining Basis Vectors of Single-Qubit system
 q0 = np.array([[1], [0]])
 q1 = np.array([[0], [1]])
+
 
 # Defining Gates
 X_gate = np.array([[0, 1], [1, 0]])
@@ -11,6 +14,7 @@ Y_gate = np.array([[0, -1j], [1j, 0]])
 Z_gate = np.array([[1, 0], [0, -1]])
 H_gate = np.array([[1, 1], [1, -1]])*(1/np.sqrt(2))
 CNOT_gate = np.array([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]])
+
 
 # Mapping Gates 
 gates = {
@@ -20,6 +24,7 @@ gates = {
     "H":H_gate, 
     "CNOT":CNOT_gate, 
 }
+
 
 # Mapping Qubits
 qubits = {
@@ -31,45 +36,56 @@ qubits = {
     'Q1Q1':np.kron(q1,q1)
 }
 
+
+# Program starts here
 while True:
+    
     # MENU
     print('Menu') 
-    print('----------------------------------------------------')
+    print('---------------------------------------------------------')
     print('Q0 for initializing normalized Q0 Qubit') 
     print('Q1 for initializing normalized Q1 Qubit') 
-    print('GATE [GATE] for displaying gate matrix')
-    print('OP [GATE]|[QUBIT(S)]> for applying Gates on Qubit(s)')
-    print('EXIT to exit')
+    print('GATE [GATE] for displaying Gate matrices')
+    print('PERFORM [GATE]|[QUBIT(S)]> for applying Gates on Qubit(s)')
+    print('EXIT to exit\n')
 
     # Taking Input
     option = input("Enter choice : ")
 
-    if(option=='Q0'):
+    # Initializing and Displaying Q0
+    if(option.upper() == 'Q0'):
         q0_0 = int(input())
         q0_1 = int(input())
         q0 = np.array([[q0_0], [q0_1]])
-        print(q0)
+        print(q0, "\n\n")
 
-    if(option=='Q1'):
+    # Initializing and Displaying Q1
+    elif(option.upper() == 'Q1'):
         q1_0 = int(input())
         q1_1 = int(input())
         q1 = np.array([[q1_0], [q1_1]])
-        print(q1)
+        print(q1, "\n\n")
 
-    if(option.split(' ')[0]=='GATE'):
-        print(gates[option.split(' ')[1]])
+    # Displaying Matrices for available Gates
+    elif(option.upper().split(' ')[0] == 'GATE'):
+        print(gates[option.upper().split(' ')[1]], "\n\n")
 
-    if(option.split(' ')[0]=='OP'):
-        # Breaking the input to extract useful info
-        string_part = option.split(' ')[1].partition('|')
+    # Applying Gates on Qubit(s)
+    elif(option.upper().split(' ')[0] == 'PERFORM'):
+        # Breaking input to extract useful info
+        string_part = option.upper().split(' ')[1].partition('|')
         gate = gates[string_part[0].upper()]
         qubit = qubits[string_part[2][:-1]]
+        print(np.matmul(gate, qubit), "\n\n")
 
-        print(np.matmul(gate, qubit))
-
-    if(option=='EXIT'):
+    # EXIT
+    elif(option.upper() == 'EXIT'):
+        print("Thankyou!")
         break
 
+    # Handling Exceptions
     else:
+        print("Invalid Choice!\n\n")
         continue
 
+# ---END---
