@@ -6,7 +6,7 @@ We were given a task to make a simple Quantum Compile, which can apply basic Gat
 
 ## Pre-requisites
 - Python 3.6 or later
-- NumPy for Python  
+- NumPy for Python 
   ```
   pip install numpy
   ```
@@ -14,7 +14,7 @@ We were given a task to make a simple Quantum Compile, which can apply basic Gat
 ## Features
 - Support for Complex Amplitudes
 - Initialize Qubits your way
-- Gates Supported
+- Gates Supported :-
   - Pauli-X `X`
   - Pauli-Y `Y`
   - Pauli-Z `Z`
