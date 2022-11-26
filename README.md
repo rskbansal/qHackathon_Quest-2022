@@ -1,5 +1,6 @@
 # qHackathon_Quest-2022
-<img src="assets/img/qiskit.png" alt="drawing" width="100"/>
+<img src="assets/img/qiskit.png" alt="drawing" height="100"/>
+<img src="assets/img/qbits.png" alt="drawing" height="110"/>
 
 Quest is the BITS Goa chapter of Qiskit Fall Fest held from 25 to 27 November. Qiskit Fall Fests are quantum computing fests held globally on different campuses and are supported by IBM Quantum.  
 <br>
