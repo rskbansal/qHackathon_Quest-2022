@@ -1,4 +1,5 @@
 # ---START---
+
 # Importing required libraries
 import numpy as np
 
@@ -37,7 +38,7 @@ qubits = {
 }
 
 
-# Program starts here
+# Main program starts here
 while True:
     
     # MENU
@@ -54,16 +55,28 @@ while True:
 
     # Initializing and Displaying Q0
     if(option.upper() == 'Q0'):
-        q0_0 = int(input())
-        q0_1 = int(input())
+        q0_0 = complex(input())
+        q0_1 = complex(input())
         q0 = np.array([[q0_0], [q0_1]])
+        # Updating dictionary
+        qubits['Q0'] = q0
+        qubits['Q0Q0'] = np.kron(q0,q0)
+        qubits['Q0Q1'] = np.kron(q0,q1)
+        qubits['Q1Q0'] = np.kron(q1,q0)
+        qubits['Q1Q1'] = np.kron(q1,q1)
         print(q0, "\n\n")
 
     # Initializing and Displaying Q1
     elif(option.upper() == 'Q1'):
-        q1_0 = int(input())
-        q1_1 = int(input())
+        q1_0 = complex(input())
+        q1_1 = complex(input())
         q1 = np.array([[q1_0], [q1_1]])
+        # Updating dictionary
+        qubits['Q1'] = q1
+        qubits['Q0Q0'] = np.kron(q0,q0)
+        qubits['Q0Q1'] = np.kron(q0,q1)
+        qubits['Q1Q0'] = np.kron(q1,q0)
+        qubits['Q1Q1'] = np.kron(q1,q1)
         print(q1, "\n\n")
 
     # Displaying Matrices for available Gates
@@ -80,7 +93,7 @@ while True:
 
     # EXIT
     elif(option.upper() == 'EXIT'):
-        print("Thankyou!")
+        print("Thankyou!\n\n")
         break
 
     # Handling Exceptions
