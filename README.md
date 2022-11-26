@@ -25,5 +25,3 @@ We were given a task to make a simple Quantum Compile, which can apply basic Gat
   - Pauli-Z `Z`
   - Hadamard `H`
   - Controlled Not `CNOT`
-
-## Commands
