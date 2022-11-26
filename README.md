@@ -12,4 +12,11 @@ We were given a task to make a simple Quantum Compile, which can apply basic Gat
   ```
 
 ## Features
-- Initialize 
+- Support for Complex Amplitudes
+- Initialize Qubits your way
+- Gates Supported
+  - Pauli-X `X`
+  - Pauli-Y `Y`
+  - Pauli-Z `Z`
+  - Hadamard `H`
+  - Controlled Not `CNOT`
