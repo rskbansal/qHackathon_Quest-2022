@@ -14,9 +14,13 @@ We were given a task to make a simple Quantum Compile, which can apply basic Gat
 ## Features
 - Support for Complex Amplitudes
 - Initialize Qubits your way
-- Gates Supported :-
+- Friendly **CLI**
+- View Matrix for supported Gates
+- Gates supported :-
   - Pauli-X `X`
   - Pauli-Y `Y`
   - Pauli-Z `Z`
   - Hadamard `H`
   - Controlled Not `CNOT`
+
+## Commands
